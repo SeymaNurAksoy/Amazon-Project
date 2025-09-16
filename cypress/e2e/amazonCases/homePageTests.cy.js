@@ -18,11 +18,11 @@ describe('Anasayfa Kontrolleri', () => {
     
     });
 
-    it('Kategori menüsüne tıklanması', () => {
+    it.only('Kategori menüsüne tıklanması', () => {
 
         homePage.visitHomePage();
         homePage.menuButton().click();
-        cy.get('.hmenu-visible').should('be.visible');  
+        homePage.menuVisible().should('be.visible');  
 
 });
 

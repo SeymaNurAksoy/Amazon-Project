@@ -14,5 +14,9 @@ class homePage {
     searchBox() {
         return cy.get('#twotabsearchtextbox');
     }
+
+    menuVisible() {
+        return cy.get('.hmenu-visible');
+    }
 }
 export default new homePage;
