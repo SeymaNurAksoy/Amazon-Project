@@ -18,5 +18,9 @@ class homePage {
     menuVisible() {
         return cy.get('.hmenu-visible');
     }
+
+    categoryBox() {
+        return cy.get('#searchDropdownBox');
+    }
 }
 export default new homePage;
