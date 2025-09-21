@@ -1,6 +1,8 @@
 class productPage{
     productList(){
-        return cy.get('.s-main-slot .s-result-item');
+       return cy.get('.s-main-slot .s-result-item[data-asin]').should('be.visible');
+ 
+
     }
     productTitle(){
         return cy.get('[data-testid="product-showcase-title"]');

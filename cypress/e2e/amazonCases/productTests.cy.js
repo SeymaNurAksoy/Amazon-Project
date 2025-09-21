@@ -4,11 +4,11 @@ const product_page = productPage;
 const home_page = homePage;
 
 describe('Ürün Sayfa Kontrolü', () => {
-    it('Ürün detay sayfası açılması kontolü', () => {
+    it.only('Ürün detay sayfası açılması kontolü', () => {
         homePage.visitHomePage();
         homePage.searchBox().type('samsung{enter}');
         cy.url().should('include', 'k=samsung');
-        productPage.productList().first().click();
+        productPage.productList().first().scrollIntoView().click();
         productPage.productTitle().should('be.visible');
         productPage.addToCartButton().should('be.visible');
 
@@ -22,7 +22,7 @@ describe('Ürün Sayfa Kontrolü', () => {
         productPage.priceFormat().should('be.visible').should('contain.text', 'TL');
     });
 
-    it.only('Ürün görselinin yüklenme kontrolü', () => {
+    it('Ürün görselinin yüklenme kontrolü', () => {
         homePage.visitHomePage();
         homePage.searchBox().type('samsung{enter}');
         cy.url().should('include', 'k=samsung');
